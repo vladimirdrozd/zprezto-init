@@ -4,4 +4,4 @@
 sudo apt-get install -y zsh
 
 # Run ZSH initialization
-.zprezto-init/init.sh
+.zprezto-init/prezto-init.sh
