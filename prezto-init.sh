@@ -1,7 +1,7 @@
 # Clone repository
 git clone --recursive https://github.com/vladimirdrozd/zprezto.git "${ZDOTDIR:-$HOME}/.zprezto"
 
-# Remove old zsh config and copy new
+# Remove old ZSH config and copy new
 rm -f .zshrc
 cp .zprezto.zshrc .zshrc
 

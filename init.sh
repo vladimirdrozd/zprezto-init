@@ -3,5 +3,8 @@
 # Install ZSH
 sudo apt-get install -y zsh
 
+# Create empty ZSH RC file
+touch .zshrc 
+
 # Run ZSH initialization
-.zprezto-init/prezto-init.sh
+zsh .zprezto-init/prezto-init.sh
