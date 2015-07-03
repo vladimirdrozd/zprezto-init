@@ -29,6 +29,17 @@ checkFile() {
 	fi
 }
 
+setUser() {
+	if [ "$1" = "" ]
+	then
+		echo "$(tput setaf 4)No user name provided, setting shell user to 'forge'."$(tput setaf 4)
+		SHELL_USER='forge'
+	else
+		echo "$(tput setaf 4)Running script for shell user '$1'."$(tput setaf 4)
+		SHELL_USER=$1
+	fi
+}
+
 reinitialize() {
 	rm -Rf .zprezto
 	rm -f .zlogin
@@ -44,15 +55,9 @@ if [ "$1" = "--reinitialize" ]
 		echo "$(tput setaf 4)Running reinitialization. Deleting old config files..."$(tput setaf 4)
 		reinitialize
 		echo "$(tput setaf 4)Running new ZPrezto configuration. Deleting old config files..."
-fi
-
-if [ "$1" = "" ]
-	then
-		echo "$(tput setaf 4)No user name provided, setting shell user to 'forge'."$(tput setaf 4)
-		SHELL_USER='forge'
+		setUser=$2
 	else
-		echo "$(tput setaf 4)Running script for shell user '$1'."$(tput setaf 4)
-		SHELL_USER=$1
+		setUser $1
 fi
 
 # Install ZSH
