@@ -3,7 +3,7 @@ git clone --recursive https://github.com/vladimirdrozd/zprezto.git "${ZDOTDIR:-$
 
 # Remove old ZSH config and copy new
 rm -f .zshrc
-cp .zprezto.zshrc .zshrc
+cp .zprezto/.zprezto.zshrc .zshrc 
 
 # Create Prezto configuration files
 setopt EXTENDED_GLOB
